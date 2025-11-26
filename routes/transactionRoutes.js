@@ -39,4 +39,24 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// ROUTE 4 : ADMIN - Voir toutes les transactions (Protégée par mot de passe)
+router.get('/admin/all', async (req, res) => {
+    try {
+        // Sécurité simple : On vérifie si le mot de passe est bon
+        const adminPassword = req.headers['x-admin-pass'];
+        
+        // REMPLACE '1234' PAR UN VRAI MOT DE PASSE COMPLIQUÉ PLUS TARD
+        if (adminPassword !== 'PoufeBiznis509$$') {
+            return res.status(403).json({ message: "Accès interdit ! Mauvais mot de passe." });
+        }
+
+        // On récupère tout, trié du plus récent au plus vieux
+        const transactions = await Transaction.find().sort({ createdAt: -1 });
+        
+        res.json(transactions);
+    } catch (error) {
+        res.status(500).json({ error: "Erreur serveur" });
+    }
+});
+
 module.exports = router;
