@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goud2USDT - Change Rapide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Goud<span class="highlight">2</span>USDT 🇭🇹</h1>
+            <p>Changez vos Gourdes en Crypto instantanément.</p>
+        </header>
+
+        <div class="card">
+            <form id="orderForm">
+                
+                <div class="form-group">
+                    <label>Votre Numéro MonCash</label>
+                    <input type="text" id="phone" placeholder="Ex: 37000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Montant en Gourdes (HTG)</label>
+                    <input type="number" id="amountHTG" placeholder="Min: 500 Gdes" required>
+                    <small>Taux actuel : 1 USDT = <span id="rate">140</span> HTG</small>
+                </div>
+
+                <div class="conversion-box">
+                    <span>Vous recevrez environ :</span>
+                    <h3 id="displayUSDT">0.00 USDT</h3>
+                </div>
+
+                <div class="form-group">
+                    <label>Votre Adresse TRC20</label>
+                    <input type="text" id="wallet" placeholder="Txxxxxxxxxxxxxxxxxx" required>
+                </div>
+
+                <button type="submit" class="btn-main">Lancer l'échange 🚀</button>
+            </form>
+        </div>
+
+        <div id="statusBox" class="status-card hidden">
+            <h3>Statut de la commande</h3>
+            <div class="steps">
+                <div class="step active" id="step1">⏳ En attente paiement</div>
+                <div class="step" id="step2">✅ Paiement Reçu</div>
+                <div class="step" id="step3">🚀 USDT Envoyés</div>
+            </div>
+            <p id="statusMessage">Envoyez l'argent au 37XX-XXXX...</p>
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
