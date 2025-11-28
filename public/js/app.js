@@ -1,5 +1,5 @@
 // Configuration
-const API_URL = 'http://localhost:3000/api/transactions';
+const API_URL = '/api/transactions';
 const EXCHANGE_RATE = 145; // Nouveau Taux
 const SERVICE_FEE = 50;    // Frais de service en Gourdes
 
