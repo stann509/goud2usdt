@@ -9,7 +9,7 @@ require('dotenv').config();
 // Note : Si tu n'as pas d'API Key, TronWeb peut être lent ou limiter les requêtes, 
 // mais pour le test ça ira.
 const tronWeb = new TronWeb({
-    fullHost: 'https://api.trongrid.io',
+    fullHost: 'https://api.shasta.trongrid.io',
     headers: { "TRON-PRO-API-KEY": process.env.TRON_API_KEY || '' },
     privateKey: process.env.TRON_PRIVATE_KEY
 });
